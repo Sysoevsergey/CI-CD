@@ -1,11 +1,11 @@
 name: Testing and deploying
 
 on:
-  commit:
+  push:
     branches: [main]
 
 jobs:
-  testing:
+  testing:git
     runs-on: ubuntu-24.04
     env:
       SECRET_KEY: ${{ secrets.SECRET_KEY }}
