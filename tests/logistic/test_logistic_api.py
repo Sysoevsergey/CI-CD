@@ -10,5 +10,5 @@ def client():
 
 @pytest.mark.django_db
 def test_get_index(client):
-	response = client.get("/")
+	response = client.get("/api/v1/")
 	assert response.status_code == 200
