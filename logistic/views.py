@@ -1,3 +1,4 @@
+import datetime
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter
 from rest_framework.viewsets import ModelViewSet
@@ -18,3 +19,10 @@ class StockViewSet(ModelViewSet):
     serializer_class = StockSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['address', 'products']
+
+def time_view(request):
+    current_time = datetime.datetime.now().time()
+    msg = f'Текущее время: {current_time}'
+    return HttpResponse(msg)
+
+
